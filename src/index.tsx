@@ -1,15 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-import styles from './index.scss';
+import Main from './pages/Main';
 
 const App = () => {
-    return (
-        <h1 className={styles.title}>
-            Hello Webpack!
-            <span />
-        </h1>
-    );
+    return <Main />;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const domNode = document.getElementById('root');
+const root = domNode && createRoot(domNode);
+
+root && root.render(<App />);
